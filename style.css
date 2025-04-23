@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 80%;
+    background-color: rgb(167, 132, 199);
+    padding: 34px;
+    margin: auto;
+}
+
+.container h3, p{
+    text-align: center;
+}
+
+input, textarea{
+    width: 80%;
+    margin: 11px 0px;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn{
+    color: white;
+    background: purple;
+    padding: 7px 10px;
+    border: 2px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submitMsg{
+    color: green;
+}

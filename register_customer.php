@@ -1,3 +1,33 @@
+<?php
+if(isset($_POST['first_name'])){
+    $server = "localhost";
+    $user = "root";
+    $password = "";
+    $con = mysqli_connect($server, $user, $password);
+
+    if (!$con) {
+        die("Connection failed due to: ". mysqli_connect_error());
+    }
+    //echo "Connection established";
+    $first_name=$_POST['first_name'];
+    $last_name=$_POST['last_name'];
+    $email=$_POST['email'];
+    $phone=$_POST['phone'];
+    $balance=$_POST['balance'];
+    $sql = "INSERT INTO `inventory`.`customers` (`customer_id`, `first_name`, `last_name`, `email`, `phone`, `registration_date`, `balance`) 
+    VALUES (NULL, '$first_name', '$last_name', '$email', '$phone', CURRENT_TIME(), '$balance');";
+    echo $sql;
+    if($con->query($sql) == true){
+        echo "Successfully inserted";}
+    else{
+        echo "Error:  $sql <br> $con->error";
+    }
+    $con->close();
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>

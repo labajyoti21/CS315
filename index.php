@@ -13,7 +13,8 @@ if(isset($_POST['name'])){
     $age=$_POST['age'];
     $phone=$_POST['phone'];
     $desc=$_POST['desc'];
-    $sql = "INSERT INTO `inventory`.`main` ( `name`, `age`, `phone`, `desc`, `time`) VALUES ('$name', '$age', '$phone', '$desc', CURRENT_TIME());";
+    $sql = "INSERT INTO `inventory`.`main` ( `name`, `age`, `phone`, `desc`, `time`)
+     VALUES ('$name', '$age', '$phone', '$desc', CURRENT_TIME());";
     echo $sql;
     if($con->query($sql) == true){
         echo "Successfully inserted";}
