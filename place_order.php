@@ -14,7 +14,6 @@ if (!$con) {
     echo json_encode(['error' => 'Connection failed: ' . mysqli_connect_error()]);
     exit;
 }
-
 // --- AJAX: GET AMOUNT ---
 if (isset($_GET['action']) && $_GET['action'] === 'get_amount') {
     header('Content-Type: application/json');
@@ -40,7 +39,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'get_amount') {
     $con->close();
     exit;
 }
-
+$message = '';
 // --- FORM SUBMISSION: PLACE ORDER ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST' 
     && isset($_POST['action']) 
